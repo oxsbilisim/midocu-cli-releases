@@ -8,9 +8,8 @@
 
 ```bash
 # Linux (recommended)
-curl -fsSL https://github.com/oxsbilisim/midocu-cli-releases/releases/latest/download/midocu-linux -o midocu
-chmod +x midocu
-sudo mv midocu /usr/local/bin/
+sudo curl -L -o /usr/local/bin/midocu https://github.com/oxsbilisim/midocu-cli-releases/releases/latest/download/midocu-linux
+sudo chmod +x /usr/local/bin/midocu
 ```
 
 ### 2. Install Midocu CRM
@@ -44,7 +43,8 @@ midocu update           # Update to latest version
 midocu restart          # Restart all services
 midocu stop             # Stop all services
 midocu start            # Start all services
-midocu uninstall        # Remove all services
+midocu uninstall        # Remove all containers
+midocu uninstall -r     # Remove containers AND CLI binary
 ```
 
 ### Admin Management
@@ -134,12 +134,11 @@ docker exec midocu-backend python -c "from app.core.database import get_db; ..."
 To update to the latest version:
 
 ```bash
-# Update CLI
-curl -fsSL https://github.com/oxsbilisim/midocu-cli-releases/releases/latest/download/midocu-linux -o /tmp/midocu
-sudo mv /tmp/midocu /usr/local/bin/midocu
+# Update CLI binary
+sudo curl -L -o /usr/local/bin/midocu https://github.com/oxsbilisim/midocu-cli-releases/releases/latest/download/midocu-linux
 sudo chmod +x /usr/local/bin/midocu
 
-# Update services
+# Update Docker services
 midocu update
 ```
 
@@ -151,5 +150,5 @@ midocu update
 
 ---
 
-**Version:** 1.0.13-dev.3
+**Version:** 1.0.13-dev.5
 **Released:** 2026-01-14
