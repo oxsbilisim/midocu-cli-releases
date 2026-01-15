@@ -150,5 +150,5 @@ midocu update
 
 ---
 
-**Version:** 1.0.13-dev.19
-**Released:** 2026-01-14
+**Version:** 1.0.13-dev.21
+**Released:** 2026-01-15
